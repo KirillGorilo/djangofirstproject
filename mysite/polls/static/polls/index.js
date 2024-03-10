@@ -1,1 +1,1 @@
-console.log(window.location.hash);
+alert('Вы вышли из системы')
