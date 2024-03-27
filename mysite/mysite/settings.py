@@ -115,6 +115,7 @@ STATIC_URL = 'static/'
 #     BASE_DIR / 'uploads',
 # ]
 
+ALLOWED_HOSTS = ['192.168.0.5']
 MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = BASE_DIR / 'uploads' 

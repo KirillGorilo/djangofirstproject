@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    {% if user.is_authenticated %}
+    <h1>Ваши задачи</h1>
+    {% if object_list %}
+    <h3>Список задачь</h3>
+    {% endif %}
+    <ul>
+        {% for todolist in object_list %}
+        <li>
+            <a href="{% url 'polls:list' todolist.id %}">{{ todolist.title }}</a>
+        </li>
+        {% empty %}
+        <h4>У вас нет списков</h4>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h3>Вам нужно войти, чтобы увидеть список ваших задач</h3>
+    {% endif %}
+    <p>
+        <input value="Добавить новый список" type="button" onclick="location.href='{% url "polls:list-add" %}'" />
+    </p>
+</div>
+{% endblock %}

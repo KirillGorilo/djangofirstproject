@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--todolist_confirm_delete.html-->
+
+<div class="container">
+    <h3>Удалить список</h3>
+    
+    <p>Вы действительно хотите удалить список <i>{{ object.title }}</i>?</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <input value="Да, удалить." type="submit">
+    </form>
+     <br>
+    <input value="Отмена" type="button" onclick="location.href='{% url "polls:home" %}';">
+</div>
+
+{% endblock %}
